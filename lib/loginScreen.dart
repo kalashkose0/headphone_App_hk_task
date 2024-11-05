@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:headphone_hk_task/pages/homePage.dart';
 
-class loginScreen extends StatelessWidget {
+class loginScreen extends StatefulWidget {
   const loginScreen({super.key});
 
+  @override
+  State<loginScreen> createState() => _loginScreenState();
+}
+
+class _loginScreenState extends State<loginScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +26,7 @@ class loginScreen extends StatelessWidget {
                     "assets/images/login.jpg",
                     height: 300,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   const Row(
@@ -42,10 +50,11 @@ class loginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextField(
+                        controller: emailController,
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.alternate_email),
+                          prefixIcon: const Icon(Icons.alternate_email),
                           labelText: 'Email ID',
-                          labelStyle: TextStyle(color: Colors.grey),
+                          labelStyle: const TextStyle(color: Colors.grey),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.grey.shade300),
@@ -56,18 +65,19 @@ class loginScreen extends StatelessWidget {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: const BorderSide(color: Colors.blue),
                           ),
                         ),
                       ),
                       const SizedBox(height: 20),
                       TextField(
+                        controller: passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.lock),
-                          suffixIcon: Icon(Icons.visibility_off),
+                          prefixIcon: const Icon(Icons.lock),
+                          suffixIcon: const Icon(Icons.visibility_off),
                           labelText: 'Password',
-                          labelStyle: TextStyle(color: Colors.grey),
+                          labelStyle: const TextStyle(color: Colors.grey),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -77,13 +87,13 @@ class loginScreen extends StatelessWidget {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: const BorderSide(color: Colors.blue),
                           ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
@@ -97,24 +107,29 @@ class loginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 11),
+                  const SizedBox(height: 11),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => homePage()));
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
-                        minimumSize: Size(double.infinity, 50),
+                        minimumSize: const Size(double.infinity, 50),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         "Login",
                         style: TextStyle(fontSize: 16, color: Colors.white),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 28,
                   ),
-                  Center(
+                  const Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
