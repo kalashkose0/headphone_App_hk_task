@@ -155,4 +155,23 @@ class _loginScreenState extends State<loginScreen> {
       ),
     );
   }
+
+  Widget _buildSectionHeader(BuildContext context, String title, String count) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          '$title $count',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            'Show all',
+            style: TextStyle(color: Colors.blue),
+          ),
+        ),
+      ],
+    );
+  } 
 }

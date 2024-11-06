@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:headphone_hk_task/loginScreen.dart';
+import 'package:headphone_hk_task/pages/homePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: loginScreen(),
+      // home: homePage(),
     );
   }
 }
